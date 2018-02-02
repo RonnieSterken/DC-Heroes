@@ -9,6 +9,16 @@
 
   }
 
+  if(isset($_GET['teamId'])) {
+    $getTeamId = $_GET['teamId'];
+  }
+
+  if(isset($_GET['heroId'])) {
+      $getHeroId = $_GET['heroId'];
+  }
+
+
+
  ?>
 
 <!DOCTYPE html>
@@ -129,21 +139,26 @@
             if($_SERVER['REQUEST_METHOD'] == "POST")
             {
                 //var_dump($_POST);
-         // get info from form
-         $heroId = $_POST['heroId'];
-         $rating = $_POST['rating'];
-         $review = $_POST['review'];
+               // get info from form
+               $heroId = $_POST['heroId'];
+               $rating = $_POST['rating'];
+               $review = $_POST['RatingReview'];
+               $getHeroIdPost = $_POST['heroId'];
+               $getTeamIdPost = $_POST['teamId'];
 
-         $insertSQL = "insert into rating (heroId,rating,ratingDate,ratingReview) VALUES ($heroId, $rating, ".time().", '$review')";
-         $resource = mysqli_query($con,$insertSQL) or die($insertSQL);
+               $insertSQL = "insert into rating (heroId,rating,ratingDate,ratingReview) VALUES ($heroId, $rating, ".time().",  '$review')";
+               $resource = mysqli_query($con,$insertSQL) or die($insertSQL);
+
+               header("Location: index.php?teamId=" . $getTeamIdPost . "&heroId=" . $getHeroIdPost ."");
             }
-            ?>
-            <textarea name="ReviewBox" rows="8" cols="80"></textarea>
+          ?>
+
 
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" class="frmRate">
+            <textarea name="RatingReview" rows="8" cols="80" required></textarea>
             <fieldset>
               <div class="rate">
-                <input type="radio" id="rating10" name="rating" value="10" />
+                <input type="radio" id="rating10" name="rating" value="10" required />
                 <label class="lblRating" for="rating10" title="5 stars"></label>
 
                   <input type="radio" id="rating9" name="rating" value="9" />
@@ -178,12 +193,15 @@
               </div>
               <div class="divSubmit">
                 <input type="submit" name="submitRating" value="Rate Hero"/>
-                <input type="hidden" name="heroId" value="<?php echo $heroId; ?>"/>
+                <input type="hidden" name="heroId" value="<?php echo $getHeroId; ?>"/>
+                <input type="hidden" name="teamId" value="<?php echo $getTeamId; ?>"/>
               </div>
             </fieldset>
 
 
           </form>
+
+          <p><?php echo $row['rating']; ?></p>
 
       </div>
 

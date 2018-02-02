@@ -83,7 +83,6 @@ header h1 {
   background-color: white;
   height: 1000px;
   width: 873px;
-  overflow-y: auto;
 }
 
 .select-hero {
@@ -92,6 +91,7 @@ header h1 {
   height: 300px;
   background-color: white;
   border: 1px solid Grey;
+  position: relative;
 }
 
 .hero-image {
@@ -105,7 +105,7 @@ header h1 {
   height: 50px;
   width: 430px;
   float: right;
-  position: relative;
+  position: absolute;
   bottom: 1px;
   right: 0;
   font-family: 'Arial';
