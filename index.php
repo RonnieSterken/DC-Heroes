@@ -17,8 +17,6 @@
       $getHeroId = $_GET['heroId'];
   }
 
-
-
  ?>
 
 <!DOCTYPE html>
@@ -28,7 +26,6 @@
     <meta name="description" content="DC Heroes">
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" type="text/css" />
-
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>DC Heroes</title>
@@ -57,7 +54,6 @@
                ?>
              </ul>
         </nav>
-
 
       </div>
       <div class="center-column">
@@ -109,7 +105,6 @@
 
                     $hero = array();
 
-
                     $resource = mysqli_query($con,$getHero);
 
                     while($row = mysqli_fetch_assoc($resource))
@@ -133,8 +128,6 @@
 
          <h2 class="textHeaders">Rate your hero</h2>
 
-
-
          <?php
             if($_SERVER['REQUEST_METHOD'] == "POST")
             {
@@ -152,7 +145,6 @@
                header("Location: index.php?teamId=" . $getTeamIdPost . "&heroId=" . $getHeroIdPost ."");
             }
           ?>
-
 
           <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" class="frmRate">
             <textarea name="RatingReview" rows="8" cols="80" required></textarea>
@@ -200,14 +192,23 @@
 
 
           </form>
-
-          <p><?php echo $row['rating']; ?></p>
-
+          <?php
+                      $sql4 = "select ratingReview from rating where heroId =" . $_GET["heroId"];
+                      $reviews = mysqli_query($con,$sql4);
+                      $reviewing = array();
+                          while($row = mysqli_fetch_assoc($reviews))
+                          {
+                              $reviewing[] = $row;
+                          }
+                        var_dump($reviewing);
+                        ?>
+                        <?php
+                        foreach ($reviewing as $key => $row) {
+                                echo $key;
+                            }
+                        ?>
       </div>
-
       </div>
     </div>
-
-
   </body>
 </html>

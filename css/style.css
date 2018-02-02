@@ -8,11 +8,10 @@ header {
   background-color: #3580e3;
   height: 90px;
   color: white;
-  font-family:  'Impact';
+  font-family: 'Impact';
   font-size: 25px;
   border-top: 20px solid #1676c4;
 }
-
 
 header h1 {
   margin: 0px;
@@ -28,7 +27,8 @@ header h1 {
 }
 
 .main-container {
-  height: calc(100vh - 160px;)
+  height: calc(100vh - 160px;
+  )
 }
 
 .left-column {
@@ -95,7 +95,7 @@ header h1 {
 }
 
 .hero-image {
-  float:  left;
+  float: left;
   height: 300px;
   width: 200px;
 }
@@ -106,16 +106,14 @@ header h1 {
   width: 430px;
   float: right;
   position: absolute;
-  bottom: 1px;
+  bottom: 0px;
   right: 0;
   font-family: 'Arial';
-
 }
 
 #banner-image img {
   width: 100%;
   height: 300px;
-
 }
 
 #chooseTeam a:hover {
@@ -129,7 +127,6 @@ header h1 {
   position: absolute;
   top: 180px;
   left: 73%;
-
 }
 
 .hero-information {
@@ -138,109 +135,108 @@ header h1 {
 }
 
 /* Ratings widget */
-@font-face
-{
-    font-family: 'anudawitalic';
-    src: url('../fonts/anudi-webfont.woff2') format('woff2'),
-         url('../fonts/anudi-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 
+@font-face {
+  font-family: 'anudawitalic';
+  src: url('../fonts/anudi-webfont.woff2') format('woff2'), url('../fonts/anudi-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@font-face
-{
-    font-family: 'anudawregular';
-    src: url('../fonts/anudrg-webfont.woff2') format('woff2'),
-         url('../fonts/anudrg-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+@font-face {
+  font-family: 'anudawregular';
+  src: url('../fonts/anudrg-webfont.woff2') format('woff2'), url('../fonts/anudrg-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
-form.frmRate
-{
-	margin: 10px auto;
+form.frmRate {
+  margin: 10px auto;
 }
 
 .rate {
-    float: left;
+  float: left;
 }
 
-
 /* Hide radio */
-.rate > input[type='radio']
-{
-    display: none;
+
+.rate>input[type='radio'] {
+  display: none;
 }
 
 /* Order correctly by floating highest to the right */
-.rate > label.lblRating
-{
-    float: right;
+
+.rate>label.lblRating {
+  float: right;
 }
 
 /* The star of the show */
-.rate > label.lblRating:before
-{
-    display: inline-block;
-    font-size: 60px;
-    padding: 5px;
-    margin: 0;
-    cursor: pointer;
-    font-family: FontAwesome;
-    content: "\f005 "; /* full star */
+
+.rate>label.lblRating:before {
+  display: inline-block;
+  font-size: 60px;
+  padding: 5px;
+  margin: 0;
+  cursor: pointer;
+  font-family: FontAwesome;
+  content: "\f005 ";
+  /* full star */
 }
 
 /* Zero stars rating */
-.rate > label.lblRating:last-child:before
-{
-    content: "\f006 "; /* empty star outline */
+
+.rate>label.lblRating:last-child:before {
+  content: "\f006 ";
+  /* empty star outline */
 }
 
 /* Half star trick */
-.rate label.half:before
-{
-    content: "\f089 "; /* half star no outline */
-    position: absolute;
-    padding-right: 0;
+
+.rate label.half:before {
+  content: "\f089 ";
+  /* half star no outline */
+  position: absolute;
+  padding-right: 0;
 }
 
 /* Click + hover color */
-input:checked ~ label.lblRating,
-label.lblRating:hover, label.lblRating:hover ~ label
-{
-	color: #ffd900;
+
+input:checked~label.lblRating, label.lblRating:hover, label.lblRating:hover~label {
+  color: #ffd900;
 }
 
 /* Hover highlights */
-input:checked + label.lblRating:hover, input:checked ~ label.lblRating:hover, /* highlight current and previous stars */
-input:checked ~ label.lblRating:hover ~ label.lblRating, /* highlight previous selected stars for new rating */
-label.lblRating:hover ~ input:checked ~ label.lblRating /* highlight previous selected stars */
-{
-	color: #f0cc00;
+
+input:checked+label.lblRating:hover, input:checked~label.lblRating:hover,
+/* highlight current and previous stars */
+
+input:checked~label.lblRating:hover~label.lblRating,
+/* highlight previous selected stars for new rating */
+
+label.lblRating:hover~input:checked~label.lblRating
+/* highlight previous selected stars */
+
+  {
+  color: #f0cc00;
 }
 
-.divSubmit
-{
-	display: block;
-	width: 250px;
-	height: 100%;
+.divSubmit {
+  display: block;
+  width: 250px;
+  height: 100%;
 }
 
-.divSubmit > input[type='submit']
-{
-	width: 180px;
-	height: 60px;
-	font-family: anudawregular;
-	font-size: 20px;
-	border: 1px solid #000;
+.divSubmit>input[type='submit'] {
+  width: 180px;
+  height: 60px;
+  font-family: anudawregular;
+  font-size: 20px;
+  border: 1px solid #000;
 }
 
-.divSubmit > input[type='submit']:hover
-{
-	background-color: #f0cc00;
-	color: #000000;
-	cursor: pointer;
-	border: 1px solid #000;
+.divSubmit>input[type='submit']:hover {
+  background-color: #f0cc00;
+  color: #000000;
+  cursor: pointer;
+  border: 1px solid #000;
 }

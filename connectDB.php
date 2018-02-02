@@ -18,13 +18,4 @@ if (mysqli_connect_errno())
     $team[] = $row;
   }
 
-
-
-
-
-
-
-
-
-
 ?>
